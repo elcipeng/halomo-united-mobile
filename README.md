@@ -8,6 +8,28 @@ Widget tree dalam Flutter adalah struktur hierarki yang menggambarkan bagaimana 
 
 ## 2. Sebutkan semua widget yang kamu gunakan dalam proyek ini dan jelaskan fungsinya.
 
+MaterialApp berfungsi sebagai root aplikasi yang menyediakan konfigurasi utama seperti tema, judul aplikasi, dan halaman awal.
+Scaffold digunakan untuk membentuk struktur dasar halaman yang terdiri atas AppBar, Body, Drawer, dan Bottom Navigation.
+AppBar menampilkan bilah di bagian atas aplikasi berisi judul "Football Shop" dengan warna utama sesuai tema.
+Text menampilkan teks di layar, baik untuk judul, label, maupun informasi tambahan.
+Padding memberikan jarak di sekitar widget, berfungsi untuk mengatur tata letak agar tampak rapi.
+Column menyusun widget secara vertikal, digunakan untuk menempatkan InfoCard, teks sambutan, dan GridView.
+Row menyusun widget secara horizontal, misalnya untuk menampilkan tiga InfoCard sejajar.
+SizedBox berfungsi sebagai ruang kosong untuk memberi jarak antar elemen antarmuka.
+Center menempatkan widget di tengah dari parent-nya.
+GridView.count menampilkan kumpulan widget dalam format grid dengan jumlah kolom tetap (tiga kolom), digunakan untuk menampilkan tombol menu.
+Card menampilkan panel dengan sudut melengkung dan efek bayangan, digunakan dalam InfoCard untuk menampilkan data seperti NPM, Nama, dan Kelas.
+Container berfungsi sebagai wadah serbaguna yang dapat mengatur ukuran, padding, margin, serta dekorasi tampilan.
+Material memberikan efek khas Material Design seperti warna latar dan sudut melengkung pada ItemCard.
+InkWell menambahkan efek gelombang (ripple) saat widget ditekan dan menangani aksi tap, menjadikannya interaktif.
+Icon digunakan untuk menampilkan ikon dari Material Icons, seperti ikon tas belanja, inventaris, dan tambah item.
+SnackBar berfungsi menampilkan notifikasi singkat di bagian bawah layar ketika tombol ditekan.
+ScaffoldMessenger mengelola dan menampilkan SnackBar dalam konteks Scaffold.
+
+Custom Widget yang Dibuat:
+InfoCard adalah widget custom bertipe StatelessWidget yang menampilkan informasi pengguna seperti NPM, Nama, dan Kelas dalam bentuk kartu dengan layout yang rapi.
+ItemCard merupakan widget custom StatelessWidget yang menampilkan tombol menu berisi ikon, nama, dan warna tertentu. Saat ditekan, widget ini akan menampilkan SnackBar.
+ItemHomepage bukan widget, melainkan class model yang menyimpan data untuk setiap tombol menu, termasuk atribut nama, ikon, dan warna.
 
 ## 3. Apa fungsi dari widget MaterialApp? Jelaskan mengapa widget ini sering digunakan sebagai widget root.
 
