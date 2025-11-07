@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:halomo_united/menu.dart';
+import 'package:halomo_united/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());

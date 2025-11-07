@@ -1,4 +1,4 @@
-#Tugas 7: Elemen Dasar Flutter
+# Tugas 7: Elemen Dasar Flutter
 Nama: Justin Dwitama Seniang
 NPM: 2406406742
 Kelas: PBP D
@@ -48,3 +48,27 @@ BuildContext memiliki peran penting karena memungkinkan widget mengakses data at
 ## 6. Jelaskan konsep "hot reload" di Flutter dan bagaimana bedanya dengan "hot restart".
 
 Hot reload memungkinkan pengembang melihat perubahan kode secara instan tanpa kehilangan state aplikasi. Flutter menyuntikkan kode baru ke Dart VM lalu memperbarui tampilan secara langsung—sangat berguna untuk perubahan kecil seperti warna atau teks. Sementara itu, hot restart menjalankan ulang aplikasi dari awal dan menghapus semua state yang tersimpan, biasanya digunakan ketika ada perubahan besar pada logika atau inisialisasi aplikasi.
+
+# Tugas 8: Flutter Navigation, Layouts, Forms, and Input Elements
+Nama: Justin Dwitama Seniang
+NPM: 2406406742
+Kelas: PBP D
+
+## 1. Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement() pada Flutter. Dalam kasus apa sebaiknya masing-masing digunakan pada aplikasi Football Shop kamu?
+
+Navigator.push() menambahkan halaman baru di atas halaman sekarang, jadinya tombol kembali akan kembali ke halaman sebelumnya, misal dari daftar produk ke detail produk.
+Navigator.pushReplacement() mengganti halaman sekarang dengan halaman baru, halaman sekarang dibuang, jadi tombol kembali akan melompat ke halaman sebelumnya lagi, misal dari halaman login ke home setelah berhasil masuk, agar pengguna tidak bisa kembali ke halaman login
+
+## 2. Bagaimana kamu memanfaatkan hierarchy widget seperti Scaffold, AppBar, dan Drawer untuk membangun struktur halaman yang konsisten di seluruh aplikasi?
+
+Scaffold adalah widget hierarki paling penting yang menyediakan struktur atau kayak rangka dasar untuk sebuah halaman. Rangka ini isinya properti untuk appBar (bagian header), body (konten utama halaman), dan drawer (menu navigasi samping). Dengan menggunakan Scaffold sebagai widget induk di setiap halaman aplikasi Football Shop, kita bisa dengan mudah memastikan konsistensi.
+
+Kita bisa menempatkan AppBar di dalam properti appBar milik Scaffold untuk membuat header yang seragam di seluruh aplikasi, misalnya untuk menampilkan judul dan ikon keranjang belanja. Untuk Drawer, hierarkinya sedikit berbeda: Drawer bukan diletakkan di dalam AppBar, melainkan sebuah properti terpisah dari Scaffold itu sendiri (sama seperti appBar dan body). AppBar kemudian secara otomatis akan mendeteksi jika ada Drawer di Scaffold dan menampilkan ikon menu (hamburger) untuk membukanya. Dengan memanfaatkan struktur Scaffold seperti ini, kita bisa menjamin setiap halaman memiliki tampilan dan tata letak dasar yang konsisten
+
+## 3. Dalam konteks desain antarmuka, apa kelebihan menggunakan layout widget seperti Padding, SingleChildScrollView, dan ListView saat menampilkan elemen-elemen form? Berikan contoh penggunaannya dari aplikasi kamu.
+
+Dalam membangun form, Padding sangat krusial untuk memberi tempat visual di sekitar elemen seperti TextField agar tidak menempel di tepi layar, misal saat membungkus form login. Untuk mengatasi masalah fungsional, SingleChildScrollView adalah semacam solusi dimana ia membungkus form agar halaman bisa di-scroll saat keyboard muncul, sehingga mencegah error overflow. terus ListView juga menyediakan scrolling tapi lebih optimal untuk daftar dinamis, seperti menampilkan item di Keranjang Belanja yang mungkin memiliki input jumlahnya sendiri
+
+## 4.Bagaimana kamu menyesuaikan warna tema agar aplikasi Football Shop memiliki identitas visual yang konsisten dengan brand toko?
+
+buat menciptakan identitas visual yang konsisten di aplikasi Football Shop, kita harus mengatur ThemeData secara terpusat di dalam MaterialApp. Daripada mengatur warna di setiap halaman, kita mendefinisikan warna brand di satu tempat, seperti primaryColor untuk warna utama toko dan colorScheme untuk warna aksen. Dengan cara ini, semua AppBar di aplikasi akan otomatis menggunakan primaryColor tersebut, dan widget seperti FloatingActionButton akan menggunakan warna aksen, sehingga identitas visual brand tetap terjaga dengan kuat di seluruh aplikasi
